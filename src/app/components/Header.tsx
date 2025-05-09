@@ -3,30 +3,31 @@
 import { useState } from "react";
 import Menu from "./Menu";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
     // 메뉴 펼치는 state
     const [open, setOpen] = useState(false);
 
-    // 메뉴 열릴 때 스크롤 막기
-    const toggleMenu = () => {
-        if (!open) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
-        setOpen((prev) => {
-            const next = !prev;
-            document.body.style.overflow = next ? "hidden" : "auto";
-            return next;
-        });
-    };
+    // // 메뉴 열릴 때 스크롤 막기
+    // const toggleMenu = () => {
+    //     if (!open) {
+    //         document.body.style.overflow = "hidden";
+    //     } else {
+    //         document.body.style.overflow = "auto";
+    //     }
+    //     setOpen((prev) => {
+    //         const next = !prev;
+    //         document.body.style.overflow = next ? "hidden" : "auto";
+    //         return next;
+    //     });
+    // };
 
     return (
         <header className="fixed w-full h-[1px] flex justify-between items-center  z-50 bg-transparent">
             {/* 로고 */}
             <Link href="/home" className="absolute left-[49.2%] top-2 hover:animate-spin transition-transform duration-5000 w-[2rem] h-[2rem]">
-                <img src="/home.png" alt="home" className="w-full h-full object-cover object-center block"/>
+                <Image src="/home.png" alt="home" className="w-full h-full object-cover object-center block"/>
             </Link>
 
             {/* 메뉴 아이콘 */}

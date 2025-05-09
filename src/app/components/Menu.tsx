@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import * as React from "react";
-import { motion, AnimatePresence, scale } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Menu({open, setOpen}) {
-    const introduce = "hello world I'm Daniel Jung";
+
     const menu = ['home', 'projects', 'about'];
 
     const item = {

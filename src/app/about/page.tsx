@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, AnimatePresence, scale } from "framer-motion";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useMemo } from "react";
 
 export default function About() {
     const about = "about";
@@ -49,22 +51,27 @@ export default function About() {
         },
     };
 
+    const yOffsets = useMemo(
+        () => text.split("").map(() => -30 - Math.random() * 50),
+        [text]
+    );
+
     // 각 문자 variants
-    const letter = {
-        hidden: () => ({
-            y: -30 - Math.random() * 50,
-            opacity: 0,
-        }),
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 500,
-                damping: 30,
-            },
-        },
-    };
+    // const letter = {
+    //     hidden: () => ({
+    //         y: -30 - Math.random() * 50,
+    //         opacity: 0,
+    //     }),
+    //     visible: {
+    //         y: 0,
+    //         opacity: 1,
+    //         transition: {
+    //             type: "spring",
+    //             stiffness: 500,
+    //             damping: 30,
+    //         },
+    //     },
+    // };
 
     return (
         <div className="w-screen h-screen flex">
@@ -111,7 +118,21 @@ export default function About() {
                             {text.split("").map((char, index) => (
                                 <motion.span
                                     key={index}
-                                    variants={letter}
+                                    variants={{
+                                        hidden: {
+                                            y: yOffsets[index],
+                                            opacity: 0,
+                                        },
+                                        visible: {
+                                            y: 0,
+                                            opacity: 1,
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 500,
+                                                damping: 30,
+                                            },
+                                        },
+                                    }}
                                     className="inline-block"
                                     custom={index}
                                 >
@@ -131,7 +152,7 @@ export default function About() {
                     <div className="tag-font pb-3">&lt;img&gt;</div>
                     <div className="w-full h-full flex flex-col relative group ">
                         <div className="absolute -top-2 -left-2 w-full h-full border  rounded-2xl transition-all duration-200 group-hover:-translate-x-2 group-hover:-translate-y-2 hover:-translate-x-2 hover:-translate-y-2 z-10 overflow-hidden bg-[#1E293B]">
-                            <img
+                            <Image
                                 src="/avatar.png"
                                 alt="avatar"
                                 className="w-full h-full object-cover transition-opacity duration-300 flex justify-center items-center"
@@ -144,7 +165,7 @@ export default function About() {
 
                 {/* Progress bar container */}
                 <div className="w-1/2 flex flex-col gap-5">
-                    {skills.map((a, i) => {
+                    {skills.map((a) => {
                         return (
                             <div
                                 key={a}
@@ -160,7 +181,21 @@ export default function About() {
                                         {a.split("").map((char, index) => (
                                             <motion.span
                                                 key={index}
-                                                variants={letter}
+                                                variants={{
+                                                    hidden: {
+                                                        y: yOffsets[index],
+                                                        opacity: 0,
+                                                    },
+                                                    visible: {
+                                                        y: 0,
+                                                        opacity: 1,
+                                                        transition: {
+                                                            type: "spring",
+                                                            stiffness: 500,
+                                                            damping: 30,
+                                                        },
+                                                    },
+                                                }}
                                                 className="inline-block"
                                                 custom={index}
                                             >

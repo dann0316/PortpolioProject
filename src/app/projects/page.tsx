@@ -1,24 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { motion, AnimatePresence, scale } from "framer-motion";
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-// personal array
-const personal = [
-    "myplanner",
-    "shoes shop",
-    "write anyting",
-    "portpolio",
-    "youtube analyzer",
-];
+// // personal array
+// const personal = [
+//     "myplanner",
+//     "shoes shop",
+//     "write anyting",
+//     "portpolio",
+//     "youtube analyzer",
+// ];
 
-// work array
-const work = ["raum", "yunli", "muaga", "teum", "mtsn"];
+// // work array
+// const work = ["raum", "yunli", "muaga", "teum", "mtsn"];
 
 export default function Projects() {
     const [mainTab, setMainTab] = useState(0); // 왼쪽 PERSONAL/WORK 탭
-    const [filterTab, setFilterTab] = useState(0); // 오른쪽 Wordpress / Cafe24 탭
+    // const [filterTab, setFilterTab] = useState(0); // 오른쪽 Wordpress / Cafe24 탭
     // project
     const projects = "projects";
 
@@ -59,22 +60,27 @@ export default function Projects() {
         },
     };
 
+    const yOffsets = useMemo(
+        () => text.split("").map(() => -30 - Math.random() * 50),
+        [text]
+    );
+    
     // 각 문자 variants
-    const letter = {
-        hidden: () => ({
-            y: -30 - Math.random() * 50,
-            opacity: 0,
-        }),
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 500,
-                damping: 30,
-            },
-        },
-    };
+    // const letter = {
+    //     hidden: () => ({
+    //         y: -30 - Math.random() * 50,
+    //         opacity: 0,
+    //     }),
+    //     visible: {
+    //         y: 0,
+    //         opacity: 1,
+    //         transition: {
+    //             type: "spring",
+    //             stiffness: 500,
+    //             damping: 30,
+    //         },
+    //     },
+    // };
 
     return (
         <div className="w-screen h-screen flex">
@@ -122,7 +128,21 @@ export default function Projects() {
                             {text.split("").map((char, index) => (
                                 <motion.span
                                     key={index}
-                                    variants={letter}
+                                    variants={{
+                                        hidden: {
+                                            y: yOffsets[index],
+                                            opacity: 0,
+                                        },
+                                        visible: {
+                                            y: 0,
+                                            opacity: 1,
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 500,
+                                                damping: 30,
+                                            },
+                                        },
+                                    }}
                                     className="inline-block"
                                     custom={index}
                                 >
@@ -217,7 +237,7 @@ function TabContent({ mainTab }: { mainTab: number }) {
                                         playsInline
                                     />
                                 ) : (
-                                    <img
+                                    <Image
                                         src={`/personal/${name}`}
                                         alt={fileName}
                                         className="cell-img"
@@ -252,7 +272,7 @@ function TabContent({ mainTab }: { mainTab: number }) {
                             href={`/detail/${name}`}
                             className="flex-cell group"
                         >
-                            <img
+                            <Image
                                 src={`/company/${name}.png`}
                                 alt={name}
                                 className="cell-img"

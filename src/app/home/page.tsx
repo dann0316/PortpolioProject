@@ -1,15 +1,15 @@
 "use client";
 
-import { motion, AnimatePresence, scale } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
 
 export default function Home() {
-    const words = [
-        "Clean UI",
-        "Friendly UX",
-        "Growing SKills",
-        "Steady Effort",
-    ];
+    // const words = [
+    //     "Clean UI",
+    //     "Friendly UX",
+    //     "Growing SKills",
+    //     "Steady Effort",
+    // ];
 
     // 처음 인사 string
     const homeIntroduce = "hello, world";
@@ -19,7 +19,8 @@ export default function Home() {
     const become2 = ["programmer", "dreamer", "innovator", "builder"];
     const [index, setIndex] = useState(0);
 
-    const text= "안녕하세요. 프론트엔드 개발자 정다니엘입니다. 저의 포트폴리오 홈페이지에 와주셔서 감사합니다.";
+    const text =
+        "안녕하세요. 프론트엔드 개발자 정다니엘입니다. 저의 포트폴리오 홈페이지에 와주셔서 감사합니다.";
 
     const container = {
         hidden: {},
@@ -56,22 +57,28 @@ export default function Home() {
         },
     };
 
+    // yoffest 미리 계산
+    const yOffsets = useMemo(
+        () => text.split("").map(() => -30 - Math.random() * 50),
+        [text]
+    );
+
     // 각 문자 variants
-    const letter = {
-        hidden: () => ({
-            y: -30 - Math.random() * 50,
-            opacity: 0,
-        }),
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 500,
-                damping: 30,
-            },
-        },
-    };
+    // const letter = {
+    //     hidden: () => ({
+    //         y: -30 - Math.random() * 50,
+    //         opacity: 0,
+    //     }),
+    //     visible: {
+    //         y: 0,
+    //         opacity: 1,
+    //         transition: {
+    //             type: "spring",
+    //             stiffness: 500,
+    //             damping: 30,
+    //         },
+    //     },
+    // };
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -79,19 +86,14 @@ export default function Home() {
         }, 2000); // 2초마다 변경
 
         return () => clearTimeout(timer);
-    }, [index]);
+    }, [index, become1.length]);
 
     return (
         <div className="w-screen h-screen flex">
-
             {/* 소개 */}
             <div className="w-1/2 overflow-hidden flex flex-col justify-center items-center">
-
                 <div className="flex flex-col justify-center items-start gap-2">
-
-                    <div className="tag-font">
-                        &lt;h2&gt;
-                    </div>
+                    <div className="tag-font">&lt;h2&gt;</div>
 
                     <div className="block break-words whitespace-pre-wrap uppercase">
                         <motion.div
@@ -120,18 +122,14 @@ export default function Home() {
                         </motion.div>
                     </div>
 
-                    <div className="tag-font">
-                        &lt;h2&gt;
-                    </div>
+                    <div className="tag-font">&lt;h2&gt;</div>
 
                     <br />
 
-                    <div className="tag-font">
-                        &lt;p&gt;
-                    </div>
+                    <div className="tag-font">&lt;p&gt;</div>
 
-                    <div >
-                    <motion.div
+                    <div>
+                        <motion.div
                             variants={container2}
                             initial="hidden"
                             animate="visible"
@@ -140,7 +138,21 @@ export default function Home() {
                             {text.split("").map((char, index) => (
                                 <motion.span
                                     key={index}
-                                    variants={letter}
+                                    variants={{
+                                        hidden: {
+                                            y: yOffsets[index],
+                                            opacity: 0,
+                                        },
+                                        visible: {
+                                            y: 0,
+                                            opacity: 1,
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 500,
+                                                damping: 30,
+                                            },
+                                        },
+                                    }}
                                     className="inline-block"
                                     custom={index}
                                 >
@@ -150,16 +162,15 @@ export default function Home() {
                         </motion.div>
                     </div>
 
-                    <div className="tag-font">
-                        &lt;/p&gt;
-                    </div>
-
+                    <div className="tag-font">&lt;/p&gt;</div>
                 </div>
             </div>
 
             {/* 소개2 */}
             <div className="w-1/2 h-full overflow-y-auto flex flex-col justify-center items-center gap-10">
-                <div className="font-bold text-3xl uppercase">I'm trying to become a...</div>
+                <div className="font-bold text-3xl uppercase">
+                    I&apos;m trying to become a...
+                </div>
                 <div className="w-20 h-1 bg-white"></div>
                 <div className="w-full flex flex-row gap-5">
                     <div className="w-1/2 flex justify-end">
