@@ -85,78 +85,69 @@ export default function Projects() {
     // };
 
     return (
-        <div className="w-screen h-screen flex">
-            {/* 소개 */}
-            <div className="w-1/2 overflow-hidden flex flex-col justify-center items-center">
-                <div className="w-full flex flex-col justify-center items-center">
-                    <div className="w-1/2 flex flex-col justify-center items-start gap-5">
-                        <div className="tag-font">&lt;h2&gt;</div>
-                        <div className="text-7xl font-extrabold uppercase">
-                            <motion.div
-                                variants={container}
-                                initial="hidden"
-                                animate="visible"
-                                className="inline-flex whitespace-nowrap"
-                            >
-                                {projects.split("").map((char, j) => (
-                                    <motion.div
-                                        key={j}
-                                        variants={item}
-                                        whileHover={{
-                                            scaleY: 1.2,
-                                            transition: {
-                                                type: "spring",
-                                                stiffness: 300,
-                                                damping: 20,
+        <div className="w-screen h-screen flex flex-col lg:flex-row">
+            {/* 텍스트 영역 */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 py-10">
+                <div className="w-full max-w-xl flex flex-col gap-5">
+                    <div className="tag-font">&lt;h2&gt;</div>
+                    <div className="text-4xl sm:text-5xl lg:text-7xl font-extrabold uppercase">
+                        <motion.div
+                            variants={container}
+                            initial="hidden"
+                            animate="visible"
+                            className="inline-flex whitespace-nowrap"
+                        >
+                            {projects.split("").map((char, j) => (
+                                <motion.div
+                                    key={j}
+                                    variants={item}
+                                    whileHover={{ scaleY: 1.2 }}
+                                    className="inline-block"
+                                >
+                                    {char}
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+                    <div className="tag-font">&lt;/h2&gt;</div>
+
+                    <div className="tag-font">&lt;p&gt;</div>
+                    <motion.div
+                        variants={container2}
+                        initial="hidden"
+                        animate="visible"
+                        className="leading-8 sm:leading-10 whitespace-pre-wrap text-sm sm:text-base"
+                    >
+                        {text.split("\n").map((line, i) => (
+                            <div key={i}>
+                                {line.split("").map((char, j) => (
+                                    <motion.span
+                                        key={`${i}-${j}`}
+                                        variants={{
+                                            hidden: {
+                                                y: yOffsets[i + j],
+                                                opacity: 0,
+                                            },
+                                            visible: {
+                                                y: 0,
+                                                opacity: 1,
+                                                transition: {
+                                                    type: "spring",
+                                                    stiffness: 500,
+                                                    damping: 30,
+                                                },
                                             },
                                         }}
                                         className="inline-block"
                                     >
                                         {char}
-                                    </motion.div>
+                                    </motion.span>
                                 ))}
-                            </motion.div>
-                        </div>
-                        <div className="tag-font">&lt;/h2&gt;</div>
-
-                        <div className="tag-font">&lt;p&gt;</div>
-
-                        <motion.div
-                            variants={container2}
-                            initial="hidden"
-                            animate="visible"
-                            className="leading-10 whitespace-pre-wrap"
-                        >
-                            {text.split("").map((char, index) => (
-                                <motion.span
-                                    key={index}
-                                    variants={{
-                                        hidden: {
-                                            y: yOffsets[index],
-                                            opacity: 0,
-                                        },
-                                        visible: {
-                                            y: 0,
-                                            opacity: 1,
-                                            transition: {
-                                                type: "spring",
-                                                stiffness: 500,
-                                                damping: 30,
-                                            },
-                                        },
-                                    }}
-                                    className="inline-block"
-                                    custom={index}
-                                >
-                                    {char === "\n" ? <br /> : char}
-                                </motion.span>
-                            ))}
-                        </motion.div>
-
-                        <div className="tag-font">&lt;/p&gt;</div>
-
-                        {/* 탭 버튼 */}
-                        <div className="flex gap-5">
+                            </div>
+                        ))}
+                    </motion.div>
+                    <div className="tag-font">&lt;/p&gt;</div>
+                    <div className="flex gap-5">
                             {["PERSONAL", "WORK"].map((a, i) => (
                                 <button
                                     key={i}
@@ -173,12 +164,11 @@ export default function Projects() {
                                 </button>
                             ))}
                         </div>
-                    </div>
                 </div>
             </div>
 
             {/* 탭 콘텐츠 */}
-            <div className="w-1/2 h-auto overflow-y-auto flex flex-col justify-start items-center">
+            <div className="w-full lg:w-1/2 h-auto lg:overflow-y-auto flex flex-col justify-start items-center">
                 <TabContent mainTab={mainTab} />
             </div>
         </div>
@@ -252,7 +242,7 @@ function TabContent({ mainTab }: { mainTab: number }) {
                     })}
                 </div>
             ) : (
-                <div>
+                <div className="w-full">
                     {/* work 필터 버튼 */}
                     <div className="flex flex-row items-center justify-center p-10 gap-5">
                         {["wordpress", "cafe24"].map((a, i) => (
