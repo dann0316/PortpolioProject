@@ -12,9 +12,6 @@ export default async function Detail({
 
     const info = ["기간", "주요 기능", "주요 기술", "기여도", "URL"];
 
-    const isVideo = name?.sample.endsWith(".mp4");
-    const fileName = name?.sample.replace(/\.(png|mp4)$/, "");
-
     return (
         <div className="flex flex-col justify-center items-start gap-10 p-10 py-15">
             <BackButton />
