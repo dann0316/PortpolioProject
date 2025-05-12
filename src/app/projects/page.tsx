@@ -60,10 +60,12 @@ export default function Projects() {
         },
     };
 
-    const yOffsets = useMemo(
-        () => text.split("").map(() => -30 - Math.random() * 50),
-        [text]
-    );
+    const yOffsets = Array(text.length).fill(-40);
+
+    // const yOffsets = useMemo(
+    //     () => text.split("").map(() => -30 - Math.random() * 50),
+    //     [text]
+    // );
     
     // 각 문자 variants
     // const letter = {
@@ -224,7 +226,7 @@ function TabContent({ mainTab }: { mainTab: number }) {
                         return (
                             <Link
                                 key={name}
-                                href={`/detail/${fileName}`}
+                                href={`/detail2/${fileName}`}
                                 className="flex-cell group"
                             >
                                 {isVideo ? (
@@ -238,6 +240,7 @@ function TabContent({ mainTab }: { mainTab: number }) {
                                     />
                                 ) : (
                                     <Image
+                                        fill
                                         src={`/personal/${name}`}
                                         alt={fileName}
                                         className="cell-img"
@@ -273,6 +276,7 @@ function TabContent({ mainTab }: { mainTab: number }) {
                             className="flex-cell group"
                         >
                             <Image
+                                fill
                                 src={`/company/${name}.png`}
                                 alt={name}
                                 className="cell-img"

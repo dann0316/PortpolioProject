@@ -39,9 +39,9 @@ export default function RootLayout({
 
                     {children}
 
-                    <div className="absolute bottom-[2rem] left-0 tag-font">
+                    {/* <div className="absolute bottom-[2.5rem] left-0 tag-font">
                         &lt;/body&gt;
-                    </div>
+                    </div> */}
 
                 </div>
 

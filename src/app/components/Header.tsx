@@ -27,7 +27,7 @@ export default function Header() {
         <header className="fixed w-full h-[1px] flex justify-between items-center  z-50 bg-transparent">
             {/* 로고 */}
             <Link href="/home" className="absolute left-[49.2%] top-2 hover:animate-spin transition-transform duration-5000 w-[2rem] h-[2rem]">
-                <Image src="/home.png" alt="home" className="w-full h-full object-cover object-center block"/>
+                <Image src="/home.png" fill alt="home" className="w-full h-full object-cover object-center block"/>
             </Link>
 
             {/* 메뉴 아이콘 */}

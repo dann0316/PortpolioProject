@@ -45,49 +45,4 @@ export const projectData = {
         contribution: "100%",
         url: "https://mtsncompany.com/"
     },
-    myplanner: {
-        title: "my planner",
-        description: "React, TypeScript, Vite를 기반으로 제작한 개인 일정 관리 웹 애플리케이션입니다. 평소 종이로 작성하던 '오늘 공부 플래너'를 웹 애플리케이션으로 직접 구현하며, UI와 기능을 모두 직접 설계하고 개발하였습니다.",
-        date: "2025.01 ~ 2024.02",
-        function: "일간 / 주간 / 월간 단위로 할 일 등록 및 관리, 달력 안에 직접 일정 추가 및 확인, 시간별 계획을 시각적을 표현하는 UI제공, 날짜 골라서 주간 plnner UI, open api를 이용한 위치 중심 날씨 표현",
-        skill: "React, TypeScript, Vite, API, axios, Bootstrap",
-        contribution: "100%",
-        url: "https://github.com/dann0316/MyPlanner"
-    },
-    shoeshop: {
-        title: "shoe shop",
-        description: "React 기반으로 제작한 신발 쇼핑몰 웹 애플리케이션입니다. 쇼핑몰에서 요구되는 기본적인 기능들을 직접 구현하며, 프론트엔드 구조 설계 및 상태 관리에 대한 이해를 높이기 위한 개인 프로젝트입니다.",
-        date: "2024.11 ~ 2024.12",
-        function: "상품 목록 조회, 상품 상세 페이지 확인, 장바구니 담기 및 수량 조절 및 삭제, 장바구니 내 상품 정렬 / 역정렬, 최근 본 상품 자동 저장 및 조회",
-        skill: "React, Redux, Bootstrap, Fetch API, Axios",
-        contribution: "100%",
-        url: "https://github.com/dann0316/ReactShopProject"
-    },
-    youtubeanalyzer: {
-        title: "youtube analyzer",
-        description: "React 기반으로 제작한 Youtube 채널 및 영상 데이터를 분석하고, 성과도를 시각화하는 서비스 유튜버 '주언규 PD'의 Viewtrap과 유사한 기능을 구현해보는 개인 프로젝트입니다.",
-        date: "2024.01 ~ 2024.03",
-        function: "유튜브 영상 검색 및 조회수 / 좋아요 / 댓글 수 조회 (키워드 및 제목으로 검색), 조회수 대비 구독자 수, 업로드일 기준 조회 속도, 시청 지속율, 참여율(댓글, 좋아요) 등을 분석하여 성과도 점수화, 성과도 평가, 자동완성 기능 (검색어 추천), 검색 키워드 기반 검색 및 영상 제목 검색 지원",
-        skill: "백엔드 Node.js + Express, 프론트엔드 React",
-        contribution: "100%",
-        url: "https://github.com/dann0316/YoutubeAnalyzer"
-    },
-    writeanything: {
-        title: "write anything",
-        description: "",
-        date: "2024.03 ~ 2024.04",
-        function: "",
-        skill: "백엔드 Node.js + Express, 프론트엔드 React",
-        contribution: "100%",
-        url: "https://github.com/dann0316/WriteAnything"
-    },
-    portpolio: {
-        title: "portpolio",
-        description: "",
-        date: "2024.04 ~ 2024.05",
-        function: "",
-        skill: "백엔드 Node.js + Express, 프론트엔드 React",
-        contribution: "100%",
-        url: "https://github.com/dann0316/PortpolioProject"
-    },
 };

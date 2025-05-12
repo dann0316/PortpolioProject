@@ -58,27 +58,7 @@ export default function Home() {
     };
 
     // yoffest 미리 계산
-    const yOffsets = useMemo(
-        () => text.split("").map(() => -30 - Math.random() * 50),
-        [text]
-    );
-
-    // 각 문자 variants
-    // const letter = {
-    //     hidden: () => ({
-    //         y: -30 - Math.random() * 50,
-    //         opacity: 0,
-    //     }),
-    //     visible: {
-    //         y: 0,
-    //         opacity: 1,
-    //         transition: {
-    //             type: "spring",
-    //             stiffness: 500,
-    //             damping: 30,
-    //         },
-    //     },
-    // };
+    const yOffsets = Array(text.length).fill(-40);
 
     useEffect(() => {
         const timer = setTimeout(() => {
