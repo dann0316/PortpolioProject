@@ -43,7 +43,7 @@ export default function About() {
     return (
         <div className="w-screen min-h-screen flex flex-col lg:flex-row">
             {/* 텍스트 영역 */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 py-10">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 pt-20 pb-10">
                 <div className="w-full max-w-xl flex flex-col gap-5">
                     <div className="tag-font">&lt;h2&gt;</div>
                     <div className="text-4xl sm:text-5xl lg:text-7xl font-extrabold uppercase">
@@ -107,7 +107,7 @@ export default function About() {
             </div>
 
             {/* 이미지 및 스킬바 영역 */}
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-16 px-6 py-10">
+            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-16 px-6 pb-20">
                 {/* 아바타 이미지 */}
                 <div className="w-40 h-40 sm:w-52 sm:h-52 relative group">
                     <div className="tag-font pb-2">&lt;img&gt;</div>

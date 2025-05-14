@@ -20,7 +20,7 @@ function Polyhedron() {
 
     return (
         <mesh ref={meshRef}>
-            <dodecahedronGeometry args={[1, 0]} />
+            <dodecahedronGeometry args={[2, 0]} />
             <meshStandardMaterial color="#ffaa00" wireframe />
         </mesh>
     );
@@ -92,9 +92,9 @@ export default function Home() {
     // }, [index, become1.length]);
 
     return (
-        <div className="w-screen h-screen flex flex-col lg:flex-row">
+        <div className="w-screen h-screen flex flex-col lg:flex-row overflow-hidden">
             {/* 텍스트 영역 */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 py-10">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 pt-20">
                 <div className="w-full max-w-xl flex flex-col gap-5">
                     <div className="tag-font">&lt;h2&gt;</div>
                     <div className="text-4xl sm:text-5xl lg:text-7xl font-extrabold uppercase">
@@ -158,7 +158,7 @@ export default function Home() {
             </div>
 
             {/* 소개2 */}
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-10">
+            <div className="w-full lg:w-1/2 h-1/2 lg:h-full flex flex-col items-center justify-center gap-10 -mt-12">
                 <Canvas camera={{ position: [0, 0, 5] }}>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[5, 5, 5]} />

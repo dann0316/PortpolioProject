@@ -14,7 +14,7 @@ export default function Footer() {
                     <Link
                         href="https://github.com/dann0316"
                         target="_blank"
-                        className="hover:text-white transition-all duration-300 text-lg"
+                        className="hover:text-white transition-all duration-300 lg:text-lg md:text-m sm:text-sm"
                     >
                         GitHub
                     </Link>

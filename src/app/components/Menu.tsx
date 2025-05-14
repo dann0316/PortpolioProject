@@ -67,11 +67,11 @@ export default function Menu({open, setOpen}) {
             </div> */}
 
             {/* 메뉴 구성 */}
-            <div className="w-full h-screen absolute flex flex-col justify-center items-center leading-80">
+            <div className="w-full h-screen absolute flex flex-col justify-center items-center gap-10 px-4">
                 {
                     menu.map((a) => {
                         return (
-                            <Link key={a} className="uppercase transition-all duration-300 hover:text-[#fefeee] font-extrabold text-[15rem]"
+                            <Link key={a} className="uppercase transition-all duration-300 hover:text-[#fefeee] font-extrabold text-[3rem] sm:text-[5rem] md:text-[7rem] lg:text-[10rem] xl:text-[13rem]"
                             href={`/${a}`} onClick={() => {
                                 setOpen(false)
                                 }}>
