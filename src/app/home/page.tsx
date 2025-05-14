@@ -94,7 +94,7 @@ export default function Home() {
     return (
         <div className="w-screen h-screen flex flex-col lg:flex-row overflow-hidden">
             {/* 텍스트 영역 */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 pt-20">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 pt-20 lg:py-10">
                 <div className="w-full max-w-xl flex flex-col gap-5">
                     <div className="tag-font">&lt;h2&gt;</div>
                     <div className="text-4xl sm:text-5xl lg:text-7xl font-extrabold uppercase">
