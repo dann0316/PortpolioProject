@@ -23,7 +23,7 @@ export default function Projects() {
     // project
     const projects = "projects";
 
-    const text = `Project 페이지에는 개인 프로젝트와 외주를 받아 진행한 프로젝트의 결과가 담겨 있습니다. 이 과정에서 구현한 기능들을 통해 저의 기술 스택과 문제 해결 능력을 깊이 있게 확인하실 수 있습니다. (고민했던 점, 해결 방법, 관련 공부 기록)`;
+    const text = `Project 페이지에는 개인 프로젝트와 외주를 받아 진행한 프로젝트의 결과가 담겨 있습니다. 이 과정에서 구현한 기능들을 통해 저의 기술 스택과 문제 해결 능력을 깊이 있게 확인하실 수 있습니다.`;
 
     const container = {
         hidden: {},
