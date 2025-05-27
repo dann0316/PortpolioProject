@@ -2,10 +2,16 @@ import Image from "next/image";
 
 export default function Loading() {
     return (
-        <div className="flex items-center justify-center">
-            
-                <Image src="/home.png" fill alt="home" className="w-[5rem] h-[5rem] object-cover object-center block animate-spin transition-transform duration-5000"/>
-            
+        <div className="w-screen h-screen flex justify-center items-center">
+            <div className="w-[3rem] h-[3rem] animate-spin-slow">
+                <Image
+                    src="/home.png"
+                    alt="home"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover object-center block"
+                />
+            </div>
         </div>
     );
 }

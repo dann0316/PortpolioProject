@@ -33,7 +33,7 @@ export const projectData2 = {
         solve: "유튜브가 좋은 영상을 어떻게 결정하는 지 공부하고, 영상 별 성과를 자체적으로 산정하는 로직을(조회수/구독자 비율, 구독자 수, 업로드 일, 참여율 등) 설계해 적절한 가중치로 영상의 성과도 점수를 설정 / 모든 영상의 시청 지속률을 영상 총 길이의 40% 로 가정하여 대체하였고 그 외 정보는 웹 크롤링 방식으로 가져올 수 있도록 방향 수립 중",
         contribution: "100%",
         url: "https://github.com/dann0316/YoutubeAnalyzer",
-        sample:"/personal/youtubeanalyzer.png",
+        sample:"/personal/youtubeanalyzer.mp4",
     },
     writeanything: {
         title: "write anything",
@@ -69,6 +69,6 @@ export const projectData2 = {
         solve: "프록시 서버 구축으로 해결 / 요청 간격 조절과 약간의 과금으로 대응 / 모델 설정 검토로 대응",
         contribution: "100%",
         url: "https://github.com/dann0316/ClothesByWeather",
-        sample:"",
+        sample:"/personal/clothesbyweather.png",
     },
 };

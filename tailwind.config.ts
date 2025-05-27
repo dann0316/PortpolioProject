@@ -10,7 +10,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-            dancing: ['var(--font-dancing)'],
+                dancing: ['var(--font-dancing)'],
+            },
+            animation: {
+                'spin-slow': 'spin 5s linear infinite',
             },
         },
     },

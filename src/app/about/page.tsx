@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function About() {
     const about = "about";
-    const text = `[프론트엔드의 매력]\n사용자에게 직접 보이는 프론트엔드에 흥미를 느껴 졸업 후 본격적으로 공부하며 다양한 프로젝트를 진행했습니다.\n[성장하고 배우는 즐거움]\n기술을 단순히 사용하는 것을 넘어, 왜 필요한지 고민하며 배우는 과정에서 큰 즐거움을 느꼈고, 점점 실력을 쌓아갔습니다.\n[파고파고 파파고]]\n혼자서 대부분을 구현한 프로젝트를 통해 문제 해결 능력을 키웠고, 단순 해결을 넘어서 원인까지 파고드는 태도를 갖게 되었습니다.`;
+    const text = `[끊임없이 탐구하는 능동적인 개발자]\nReact, Next.js, Node.js(Express), TypeScript 및 JavaScript 기반으로 신입 프론트엔드 개발자 정다니엘 입니다.\nUI 중심의 작업부터 최신 기술 스택을 확장하며 다양한 문제를 다양한 외주 및 개인 프로젝트로 직접 해결해왔습니다.\n단순한 기능 구현을 넘어서, "접근성과 사용성, 반응형 디자인, 성능 개선 및 최적화"까지 끊임없이 탐구하며 ‘왜 필요한가’, ‘사용자에게 어떤 영향을 줄 수 있는가’, ‘더 나아질 수는 없는가’를 능동적으로 생각하는 "UX 중심의 개발자"로 성장하고자 합니다.`;
 
     const skills = [
-        "front-end (react, next, typescript, tailwind, bootstrap)",
-        "back-end (mongodb, nextjs, nodejs, mysql)",
-        "etc (git, github, vecel, aws)",
+        "Front-End (JavaScript, TypeScript, React, Next.js)",
+        "Back-End (Nextjs, Node.js(Express), MongoDB, MySQL)",
+        "etc (Git, GitHub, Vecel, AWS)",
     ];
 
     const container = {
@@ -124,11 +124,11 @@ export default function About() {
                 </div>
 
                 {/* 스킬 프로그래스 바 */}
-                <div className="w-full max-w-xl flex flex-col gap-6">
+                <div className="w-full max-w-xl flex flex-col gap-16">
                     {skills.map((a) => (
                         <div
                             key={a}
-                            className="font-bold text-base sm:text-lg md:text-xl uppercase"
+                            className="font-bold text-base sm:text-lg md:text-xl"
                         >
                             <motion.div
                                 variants={container2}
@@ -166,9 +166,9 @@ export default function About() {
                                     initial={{ width: 0 }}
                                     animate={{
                                         width: `${
-                                            a.startsWith("front-end")
-                                                ? "80%"
-                                                : a.startsWith("back-end")
+                                            a.startsWith("Front-End")
+                                                ? "75%"
+                                                : a.startsWith("Back-End")
                                                 ? "60%"
                                                 : a.startsWith("etc")
                                                 ? "40%"
