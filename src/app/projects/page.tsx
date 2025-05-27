@@ -184,7 +184,7 @@ function TabContent({ mainTab }: { mainTab: number }) {
     const workItems = filterTab === 0 ? wordpressItems : cafe24Items;
 
     // personal 필터용
-    const reactItems = ["myplanner.mp4", "shoeshop.mp4", "youtubeanalyzer.png"];
+    const reactItems = ["myplanner.mp4", "shoeshop.mp4", "youtubeanalyzer.mp4", "clothesbyweather.png"];
     const nextItems = ["writeanything.mp4", "portpolio.png"];
     const personalItems = filterTab === 0 ? reactItems : nextItems;
 
