@@ -68,7 +68,7 @@ export const projectData2 = {
         problem: "브라우저의 CORS 정책으로 인한 API 호출 제한 / PT API의 응답 횟수 제한 및 유료화 / 모델 선택 오류",
         solve: "프록시 서버 구축으로 해결 / 요청 간격 조절과 약간의 과금으로 대응 / 모델 설정 검토로 대응",
         contribution: "100%",
-        url: "",
+        url: "https://github.com/dann0316/ClothesByWeather",
         sample:"",
     },
 };
